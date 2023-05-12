@@ -1,0 +1,79 @@
+# objectif : comprendre pairwise.table()
+
+# Implementation du test de student sur iris sur Sepal.Length
+ttest <- function(i, j){
+  message(i)
+  t.test(iris[ as.numeric(iris$Species)==i, 1], 
+           iris[ as.numeric(iris$Species)==j, 1])$p.value
+}
+
+ttest('versicolor', 'virginica')
+M <- pairwise.table(ttest, levels(iris$Species), p.adj="holm")
+
+pairwise.result <- pairwise.t.test(iris$Sepal.Length, g=iris$Species, p.adj="bon")
+
+
+# TO DO
+# test :
+#categories <- c('A', 'B', 'C', 'D')
+#M <- matrix(c(1,1,1,1,1,1,0.01,0.01,1), byrow=TRUE, ncol=3, dimnames=list(categories[-1],categories[-length(categories)]))
+
+# TODO : 
+
+pairwise.formula <- function(){
+  # see t1way programmation
+          if (missing(data)) {
+          mf <- model.frame(formula)
+        }
+        else {
+          mf <- model.frame(formula, data)
+        }
+        cl <- match.call()
+    x <- split(model.extract(mf, "response"), mf[, 2])
+}
+
+
+# ajouter au cours sur les packages : programmer une fonction 
+#  Got variable name given to the parameter of a function
+argname <- function(x, y, z){ 
+  print( deparse1(substitute(x)))
+  print( substitute(y))
+  print( substitute(z))
+}
+argname(xx,yy,ztoto)
+
+
+# tester ça et aussi sur les 100 premiers 
+x <- iris$Sepal.Length
+g <- iris$Species
+m.test(x,g, code=TRUE)
+
+bartlett.test( x, g)$p.value
+lawstat::levene.test( x, g)$p.value
+fligner.test( x,g)$p.value
+oneway.test( x~g,  var.equal=FALSE)$p.value
+oneway.test( x~g,  var.equal=TRUE)$p.value
+kruskal.test( x, g)$p.value
+WRS2::t1way( x~g)$p.value
+WRS2::med1way( x~g)$p.value
+
+catego( x, g, test_fnct="t.test")
+agricolae::SNK.test( aov(x~g),trt="g", group=TRUE, alpha=0.05)$p.value
+catego( x, g, test_fnct="wilcox.test")
+
+ # Manipulation des formules
+f <- formula(Sepal.Length~ Sepal.Width + Petal.Length)  
+f[[3]]
+all.vars(f)
+
+f <- formula(Sepal.Length~ Sepal.Width + Petal.Length)  
+reg2 <- lm(f)
+attach(iris)
+eval(getCall(reg)$data)
+eval(getCall(reg2)$data)
+
+reg$model #  got data from lm result 
+eval(reg$call[[2]]) # got formula from lm result
+
+
+

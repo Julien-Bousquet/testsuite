@@ -1,0 +1,6 @@
+context("Clean Factor")
+test_that(" na are removed ",{
+expect_equal(cleanFactor( 1:3, factor('A', 'A', 'B'))$x, 1:2 )
+
+
+})
