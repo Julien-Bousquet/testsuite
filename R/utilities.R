@@ -6,7 +6,7 @@
 #' @author Julien Bousquet (2023)
 #' @param x  a vector of values, corresponding to g. 
 #' @param g  a vector of categories, which must be checked.
-#' @ return Give comprehensive error messages. 
+#' @return Give comprehensive error messages. 
 #' Return a list with x and g, cleaned if possible.
 #' @examples
 #' cleanFactor( 1:6, factor(rep(c('a', 'b', NA), times=2) ))

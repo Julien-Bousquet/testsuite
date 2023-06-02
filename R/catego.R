@@ -11,7 +11,7 @@
 #' @param p.adjust.method the method to correct the p-value. 
 #' See `p.ajust.methods` to see the whole list. 
 #' @param ... other parameters to give to `pairwise.table()`.
-#' @ return A list of class "pairwise.htest". Find the table of p-values 
+#' @return A list of class "pairwise.htest". Find the table of p-values 
 #' in field $p.value. 
 #' @examples
 #' # Classical Student test :
@@ -92,7 +92,7 @@ message('Not yet implemented')
 #'
 #' @author Julien Bousquet (2021)
 #' @inheritParams pairwise 
-#' @ return A list  : 
+#' @return A list  : 
 #' * a dataframe $cat with a named category for each group,
 #' * an object of class `pairwise.htest`.
 #' If a group are between two category, and are 

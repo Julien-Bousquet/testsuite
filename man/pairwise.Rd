@@ -37,6 +37,10 @@ and \code{g} is a factor of the same length.}
 \item{data}{the dataframe where \code{x} and \code{g} are
 columns names.}
 }
+\value{
+A list of class "pairwise.htest". Find the table of p-values
+in field $p.value.
+}
 \description{
 \code{pairwise()} compute p-value for all the possible
 combinaison of groups. The p-values are corrected by

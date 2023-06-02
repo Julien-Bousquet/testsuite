@@ -45,6 +45,15 @@ and \code{g} is a factor of the same length.}
 \item{data}{the dataframe where \code{x} and \code{g} are
 columns names.}
 }
+\value{
+A list  :
+\itemize{
+\item a dataframe $cat with a named category for each group,
+\item an object of class \code{pairwise.htest}.
+If a group are between two category, and are
+name with the two letters.
+}
+}
 \description{
 Compute pairwise tests and categorize groups from the results of the pairwise function
 }

@@ -11,6 +11,10 @@ cleanFactor(x, g)
 
 \item{g}{a vector of categories, which must be checked.}
 }
+\value{
+Give comprehensive error messages.
+Return a list with x and g, cleaned if possible.
+}
 \description{
 \code{cleanFactor()} check that the factor given in argument
 allows the application of statistical test.
