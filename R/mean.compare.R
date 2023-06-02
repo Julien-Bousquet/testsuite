@@ -145,7 +145,7 @@ L$category.size = data.frame(category=CAT,  size=SamplesSizes)
 	data.frame(p.value=t.test(x[ind], x[!ind], var.equal=TRUE, paired=paired)$p.value) -> L$t.test.varequal
                 if(code)message(paste0('t.test( ',xname, '~', gname,', var.equal=FALSE, paired=',paired,')$p.value'))
 	data.frame(p.value=t.test(x[ind], x[!ind], var.equal=FALSE, paired=paired)$p.value) -> L$t.test.vardiff
-                if(code)message(paste0('wilcox.test( ',xname, '~', gname,')$p.value'))
+                if(code)message(paste0('wilcox.test( ',xname, '~', gname,', paired=',paired,')$p.value'))
 	data.frame(p.value=wilcox.test(x[ind], x[!ind])$p.value) -> L$wilcoxon.mann.whitney
 	if(paired)data.frame(p.value=wilcox.test(x[ind], x[!ind], paired=TRUE)$p.value) -> L$wilcoxon
    	if(debug.){cat('Student test with 2 samples  -- varequal = T p.values : \n'); print(L$t.test.varequal)}
