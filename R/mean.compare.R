@@ -344,11 +344,11 @@ L$category.size = data.frame(category=CAT,  size=SamplesSizes)
 	arrows(pos5[1], pos5[2],pos9[1],pos6[2]- arr.vspace, code=2, length=arr.len, lwd=arr.lwd, angle=arr.angle, col=col1.5) #arc1.5
 
 	#arrow from fligner to AOV trim
-	col1.6 <- ifelse(min(L$fligner.test$p.value)<=pval  , 'green', 'grey')
+	col1.6 <- ifelse(min(L$fligner.test$p.value)>=pval  , 'green', 'grey')
 	arrows(pos5[1], pos5[2],pos10[1],pos6[2]-arr.vspace, code=2, length=arr.len, lwd=arr.lwd, angle=arr.angle, col=col1.6) #arc1.4
 
 	#arrow from fligner to AOV Median
-	col1.7 <- ifelse(min(L$fligner.test$p.value)>pval  , 'green', 'grey')
+	col1.7 <- ifelse(min(L$fligner.test$p.value)<pval  , 'green', 'grey')
 	arrows(pos5[1], pos5[2], pos11[1],pos6[2]-arr.vspace, code=2, length=arr.len, lwd=arr.lwd, angle=arr.angle, col=col1.7) #arc1.4
 
 	#arrow from oneway to pairwise.t.test()
