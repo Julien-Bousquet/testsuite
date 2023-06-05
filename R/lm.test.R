@@ -8,6 +8,7 @@
 #' observations in the model are ordered by the size of z. 
 #' If set to NULL (the default), the observations are 
 #' assumed to be ordered (e.g., a time series).
+#' @export
 lm.test <- function (reg,  order.by=NULL, 
       code=TRUE, verbose=TRUE, conf.level=0.95) {
   #Answers :
