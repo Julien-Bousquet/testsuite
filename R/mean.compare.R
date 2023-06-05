@@ -331,16 +331,16 @@ L$category.size = data.frame(category=CAT,  size=SamplesSizes)
 	arrows(pos3[1],pos3[2],pos8[1],pos6[2]- arr.vspace, code=2, length=arr.len, lwd=arr.lwd, angle=arr.angle, col=col1.2) #arc1.2
 
 	#arrow from levene-Brown Forsythe to oneway with diff means
-	col1.3 <- ifelse(L$levene.test$p.value>pval  , 'green', 'grey')
+	col1.3 <- ifelse(L$levene.test$p.value<pval  , 'green', 'grey')
 	arrows(pos4[1],pos4[2],pos7[1],pos6[2]- arr.vspace, code=2, length=arr.len, lwd=arr.lwd, angle=arr.angle, col=col1.3) #arc1.3
 
 
 	#arrow from levene-Brown Forsythe to ANOVA with equal means
-	col1.4 <- ifelse(L$levene.test$p.value<pval  , 'green', 'grey')
+	col1.4 <- ifelse(L$levene.test$p.value>=pval  , 'green', 'grey')
 	arrows(pos4[1],pos4[2],pos8[1],pos6[2]- arr.vspace, code=2, length=arr.len, lwd=arr.lwd, angle=arr.angle, col=col1.4) #arc1.4
 
 	#arrow from fligner to AOV Kruskal
-	col1.5 <- ifelse(min(L$fligner.test$p.value)>pval  , 'green', 'grey')
+	col1.5 <- ifelse(min(L$fligner.test$p.value)<pval  , 'green', 'grey')
 	arrows(pos5[1], pos5[2],pos9[1],pos6[2]- arr.vspace, code=2, length=arr.len, lwd=arr.lwd, angle=arr.angle, col=col1.5) #arc1.5
 
 	#arrow from fligner to AOV trim
@@ -348,7 +348,7 @@ L$category.size = data.frame(category=CAT,  size=SamplesSizes)
 	arrows(pos5[1], pos5[2],pos10[1],pos6[2]-arr.vspace, code=2, length=arr.len, lwd=arr.lwd, angle=arr.angle, col=col1.6) #arc1.4
 
 	#arrow from fligner to AOV Median
-	col1.7 <- ifelse(min(L$fligner.test$p.value)<=pval  , 'green', 'grey')
+	col1.7 <- ifelse(min(L$fligner.test$p.value)>pval  , 'green', 'grey')
 	arrows(pos5[1], pos5[2], pos11[1],pos6[2]-arr.vspace, code=2, length=arr.len, lwd=arr.lwd, angle=arr.angle, col=col1.7) #arc1.4
 
 	#arrow from oneway to pairwise.t.test()
