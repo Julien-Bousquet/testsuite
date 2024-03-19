@@ -21,7 +21,7 @@ Imports:
     broom,
     crayon,
     foreach, 
-    normtest,
+    tseries,
     lawstat,
     lmtest,
     WRS2
