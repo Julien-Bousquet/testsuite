@@ -106,7 +106,7 @@ L$category.size = data.frame(category=CAT,  size=SamplesSizes)
  #Strate 1 : repartition
    # Normality inside  categories 
    sidak <- 1-(1-pval)^(1/C) # pvalue adjusted by Sidak method
-   foreach(i = CAT, .packages='normtest', .combine=rbind)%do%{
+   foreach(i = CAT, .packages='tseries', .combine=rbind)%do%{
 	#ind is the vector of indexes of the current category
 	ind <-  group==i
 	#N.temp is the size of the current category
