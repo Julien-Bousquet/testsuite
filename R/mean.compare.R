@@ -116,7 +116,7 @@ L$category.size = data.frame(category=CAT,  size=SamplesSizes)
                    data.frame(category=i, test='Shapiro', sidak=sidak, p.value=round(shapiro.test(x[ind])$p.value,4))                 
                 }else if(N.temp<1000){
 	   if(code)message(paste0('tseries::jarque.bera.test( ',xname, '[', gname, '=="', i,'"])$p.value'))
-                   data.frame(category=i, test='Jarque Bera', sidak=sidak, p.value=round(tseries.jarque.bera.test(x[ind])$p.value,4))
+                   data.frame(category=i, test='Jarque Bera', sidak=sidak, p.value=round(tseries::jarque.bera.test(x[ind])$p.value,4))
                 }else{
 	   if(code)message(paste0('Big sample : no normality test needed.\n'))
                     data.frame(category=i, test='Big number', sidak=sidak, p.value=1)
